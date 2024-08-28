@@ -1,0 +1,171 @@
+:root {
+  --primary-red: hsl(0, 100%, 74%);
+  --primary-green: hsl(154, 59%, 51%);
+  --accent-blue: hsl(248, 32%, 49%);
+  --neutral-grayish: hsl(246, 25%, 77%);
+  --main-transition: all 0.3s;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", system-ui;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.4;
+  height: 100vh;
+  background-color: var(--primary-red);
+  background-image: url(images/bg-intro-mobile.png);
+  background-size: contain;
+  color: white;
+  text-align: center;
+  padding: 60px 25px;
+}
+
+main {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+header h1 {
+  margin-bottom: 10px;
+}
+
+section {
+  max-width: 500px;
+}
+section .trial-box {
+  background-color: var(--accent-blue);
+  border-radius: 7px;
+  padding: 15px 60px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  box-shadow: 0 7px rgb(0, 0, 0, 0.15);
+}
+section > .trial-box span {
+  font-weight: 600;
+}
+section form {
+  background-color: white;
+  padding: 20px 20px;
+  border-radius: 7px;
+  box-shadow: 0 7px rgb(0, 0, 0, 0.15);
+}
+.input-container {
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+}
+input {
+  width: 100%;
+  padding: 15px 15px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #6b686e2d;
+  caret-color: var(--accent-blue);
+  transition: var(--main-transition);
+}
+input:focus {
+  border: 1px solid var(--accent-blue);
+}
+input::placeholder {
+  font-weight: 600;
+  transition: var(--main-transition);
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.red-input {
+  border: 1px solid var(--primary-red);
+}
+.red-input::placeholder {
+  color: var(--primary-red);
+}
+.error-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.error {
+  color: var(--primary-red);
+  font-weight: 500;
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+form .claim {
+  background-color: var(--primary-green);
+  color: white;
+  border: none;
+  outline: none;
+  padding: 15px 15px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 -4px rgb(0, 0, 0, 0.15) inset;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: var(--main-transition);
+}
+form .claim:hover {
+  background-color: #76e3b4;
+  cursor: pointer;
+}
+form .claim:active {
+  background-color: var(--primary-green);
+}
+form p {
+  color: var(--neutral-grayish);
+  font-size: 11px;
+}
+.terms {
+  margin-bottom: 10px;
+}
+form p a {
+  color: var(--primary-red);
+  font-weight: bold;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: var(--main-transition);
+}
+form p a:hover {
+  color: rgb(255, 122, 122, 0.6);
+}
+
+@media (min-width: 720px) {
+  body {
+    background-image: url(images/bg-intro-desktop.png);
+  }
+  main {
+    flex-direction: row;
+    gap: 70px;
+  }
+  header {
+    text-align: left;
+    flex-basis: 610px;
+  }
+  header h1 {
+    font-size: 50px;
+  }
+  header p {
+    font-size: 20px;
+  }
+  section {
+    min-width: 300px;
+  }
+}
